@@ -3,11 +3,12 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get '/book', to: 'book#index'
+      get '/author', to: 'author#index'
+      get '/publisher', to: 'publisher#index'
+      get '/category', to: 'category#index'
+      get '/search', to: 'search#index'
     end
   end
-
-
-  get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
