@@ -3,13 +3,11 @@ class API::V1::BookController < API::V1::BaseController
     ##
     # Set the options hash based on params.
     #  
-    @options = {id: book_params[:id].to_i, uri: book_params[:url]}
+    @options = {id: book_params[:id].to_i, uri: book_params[:url], eager: eager?}
 
     ##
     # Extract the requested metadata
     #
-    puts Bookshark::Extractor.new(format: 'pretty_json').book(id: 300000000)
-    puts @options
     response = Bookshark::Extractor.new(format: @format).book(@options)   
 
     ##
@@ -21,6 +19,10 @@ class API::V1::BookController < API::V1::BaseController
   private
 
   def book_params
-    params.permit(:id, :url)
+    params.permit(:id, :url, :eager)
   end 
+
+  def eager?
+    book_params[:eager].present? and book_params[:eager] == "1"
+  end
 end
