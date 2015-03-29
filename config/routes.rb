@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   
+
+  devise_for :users
+  
   namespace :api do
     namespace :v1 do
       get '/book', to: 'book#index'
       get '/author', to: 'author#index'
       get '/publisher', to: 'publisher#index'
       get '/category', to: 'category#index'
-      get '/search', to: 'search#index'
+      get '/search', to: 'search#index'      
     end
   end
 

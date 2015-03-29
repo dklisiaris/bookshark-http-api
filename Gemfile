@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '~> 4.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -64,3 +64,6 @@ gem 'json'
 
 # Book metadata extraction library
 gem 'bookshark', "~> 1.0.0.alpha"
+
+# Devise is a flexible authentication solution for Rails based on Warden.
+gem 'devise'

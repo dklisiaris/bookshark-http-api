@@ -14,4 +14,9 @@ class API::V1::BaseController < ApplicationController
   def extractor_params
     params.permit(:minify)
   end
+
+  def client_ip
+    request.remote_ip
+    request.env["HTTP_X_FORWARDED_FOR"]
+  end
 end

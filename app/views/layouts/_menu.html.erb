@@ -1,0 +1,17 @@
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="">Bookshark</a>
+
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link pure-menu-active">Home</a></li>
+            <% if user_signed_in? %> 
+            <li class="pure-menu-item"><%= link_to "Account", edit_user_registration_path, class: "pure-menu-link" %></li>
+            <li class="pure-menu-item"><%= link_to "Log Out", destroy_user_session_path, :method=>'delete', class: "pure-menu-link" %></li>
+            <% else %> 
+            <li class="pure-menu-item"><%= link_to "Log In", new_user_session_path, class: "pure-menu-link" %></li>
+            <li class="pure-menu-item"><%= link_to "Sign Up", new_user_registration_path, class: "pure-menu-link" %></li>
+            <% end %> 
+
+        </ul>
+    </div>
+</div>

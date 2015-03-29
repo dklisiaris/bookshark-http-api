@@ -3,7 +3,7 @@ class API::V1::BookController < API::V1::BaseController
     ##
     # Set the options hash based on params.
     #  
-    @options = {id: book_params[:id].to_i, uri: book_params[:url], eager: eager?}
+    @options = {id: book_params[:id].to_i, uri: book_params[:url], isbn: book_params[:isbn], eager: eager?}
 
     ##
     # Extract the requested metadata
@@ -19,7 +19,7 @@ class API::V1::BookController < API::V1::BaseController
   private
 
   def book_params
-    params.permit(:id, :url, :eager)
+    params.permit(:isbn, :id, :url, :eager)
   end 
 
   def eager?

@@ -2,4 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-hljs.initHighlightingOnLoad();
+@scrollToElement = (el, ms) ->
+  speed = if ms then ms else 300
+  $('html,body').animate { scrollTop: $(el).offset().top }, speed
+  return
+
+hljs.initHighlightingOnLoad()  
