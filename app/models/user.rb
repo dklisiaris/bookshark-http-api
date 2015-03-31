@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :api_keys, :dependent => :destroy
+
+  def reached_limit?
+    api_keys.count <= 10 ? false : true
+  end
 end

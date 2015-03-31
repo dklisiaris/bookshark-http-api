@@ -5,7 +5,7 @@ class CreateAPIKeys < ActiveRecord::Migration
       t.string :key
       t.integer :requests_count
       t.string :last_request_ip
-      t.date :last_reset_at      
+      t.datetime :last_reset_at      
       t.references :user, index: true
 
       t.timestamps null: false

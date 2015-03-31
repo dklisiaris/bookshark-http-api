@@ -26,7 +26,7 @@ class APIKeysController < ApplicationController
   # POST /api_keys.json
   def create
     @api_key = current_user.api_keys.new(api_key_params)
-    @api_key.set_initial_defaults  
+    set_initial_defaults(@api_key)
 
     respond_to do |format|
       if @api_key.save
@@ -71,6 +71,13 @@ class APIKeysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def api_key_params
-      params.require(:api_key).permit(:name, :key, :requests_count, :last_request_ip, :last_reset_at, :user)
+      params.require(:api_key).permit(:name)
     end
+
+    def set_initial_defaults(api_key)
+      api_key.key = APIKey.generate_token    
+      api_key.requests_count = 0
+      api_key.last_reset_at = Time.now
+    end
+
 end

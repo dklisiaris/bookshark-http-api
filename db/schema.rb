@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20150331193911) do
     t.string   "key"
     t.integer  "requests_count"
     t.string   "last_request_ip"
-    t.date     "last_reset_at"
+    t.datetime "last_reset_at"
     t.integer  "user_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
