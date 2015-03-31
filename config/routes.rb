@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
 
+  resources :api_keys
   devise_for :users
   
   namespace :api do

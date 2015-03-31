@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329220457) do
+ActiveRecord::Schema.define(version: 20150331193911) do
+
+  create_table "api_keys", force: :cascade do |t|
+    t.string   "name"
+    t.string   "key"
+    t.integer  "requests_count"
+    t.string   "last_request_ip"
+    t.date     "last_reset_at"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "api_keys", ["key"], name: "index_api_keys_on_key", unique: true
+  add_index "api_keys", ["user_id"], name: "index_api_keys_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
