@@ -17,4 +17,11 @@ class APIKey < ActiveRecord::Base
     write_attribute(:requests_count, 0)
     write_attribute(:last_reset_at, Time.now)
   end
+
+  def below_usage_limits?
+    reset_if_needed!
+    requests_count < user.max_daily_requests ? true : false
+  end
+
+
 end
