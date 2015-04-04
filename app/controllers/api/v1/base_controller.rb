@@ -13,14 +13,26 @@ class API::V1::BaseController < ApplicationController
   end
 
   def grant_access!    
-    @api_key = APIKey.find_by(key: extractor_params[:key]) if extractor_params[:key].present?
-
-    if @api_key.present? and @api_key.below_usage_limits?
-      @api_key.requests_count += 1
-      @api_key.last_request_ip = client_ip
-      @api_key.save!
+    if extractor_params[:key].present?
+      @api_key = APIKey.find_by(key: extractor_params[:key])
     else
-      render :json => error_response
+      @api_key = APIKey.find_or_create_by(last_request_ip: client_ip, user: nil) do |key|
+        key.name = 'per_ip_key'
+        key.requests_count = 0
+        key.last_reset_at = Time.now
+      end
+    end
+
+    if @api_key.present?
+      if @api_key.below_usage_limits?
+        @api_key.requests_count += 1
+        @api_key.last_request_ip = client_ip if extractor_params[:key].present?
+        @api_key.save!
+      else
+        render :json => error_response('OVER_QUERY_LIMIT')
+      end
+    else
+      render :json => error_response('REQUEST_DENIED')    
     end
   end
 
@@ -32,8 +44,8 @@ class API::V1::BaseController < ApplicationController
     request.remote_ip    
   end
 
-  def error_response
-    response = {status: 'REQUEST_DENIED'}
+  def error_response(status)
+    response = {status: status}
     response = JSON.pretty_generate(response)
   end
 end

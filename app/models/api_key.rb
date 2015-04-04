@@ -20,7 +20,11 @@ class APIKey < ActiveRecord::Base
 
   def below_usage_limits?
     reset_if_needed!
-    requests_count < user.max_daily_requests ? true : false
+    if user
+      requests_count < user.max_daily_requests ? true : false
+    else
+      requests_count < 1000 ? true : false
+    end
   end
 
 
