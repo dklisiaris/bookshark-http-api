@@ -4,6 +4,7 @@
     <ul class="pure-menu-list">
       <li class="pure-menu-item"><%= link_to "Home", root_path, class: "pure-menu-link pure-menu-active" %></li>
       <% if user_signed_in? %> 
+      <li class="pure-menu-item"><%= link_to "API Keys", api_keys_path, class: "pure-menu-link" %></li>
       <li class="pure-menu-item"><%= link_to "Account", edit_user_registration_path, class: "pure-menu-link" %></li>
       <li class="pure-menu-item"><%= link_to "Log Out", destroy_user_session_path, :method=>'delete', class: "pure-menu-link" %></li>
       <% else %> 
