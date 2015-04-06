@@ -1,6 +1,8 @@
 class APIKey < ActiveRecord::Base
   belongs_to :user
 
+  # scope :persisted, -> { where "id IS NOT NULL" }
+
   def self.generate_token
     SecureRandom.hex(32)    
   end

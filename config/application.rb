@@ -18,7 +18,7 @@ module BooksharkWebApi
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+    # -- all .rb files in that directory are automatically loaded.    
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
@@ -40,6 +40,9 @@ module BooksharkWebApi
         controller_specs: true,
         request_specs: false
       g.fixture_replacement :factory_girl, dir: "spec/factories"
-    end      
+    end
+
+    # Autoload lib directory
+    config.autoload_paths << Rails.root.join('lib')      
   end
 end

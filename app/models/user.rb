@@ -3,8 +3,9 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  
+  has_many :api_keys, :dependent => :destroy, extend: Extensions::ActiveRecordExtensions
 
-  has_many :api_keys, :dependent => :destroy
 
   enum level: %i(registered gold platinum)
 

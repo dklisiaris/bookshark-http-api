@@ -13,15 +13,13 @@
     </thead>
 
     <tbody>    
-      <% @api_keys.each do |api_key| %>
-        <% unless api_key.new_record? %>
+      <% @api_keys.each do |api_key| %>        
         <tr>
           <td><%= api_key.name %></td>
           <td><%= api_key.key %></td>
           <td><%= api_key.requests_count %></td>                        
           <td><%= link_to 'Destroy', api_key, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-        <% end %>
+        </tr>        
       <% end %>
     </tbody>
   </table>

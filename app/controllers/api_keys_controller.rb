@@ -7,7 +7,7 @@ class APIKeysController < ApplicationController
   # GET /api_keys
   # GET /api_keys.json
   def index
-    @api_keys = current_user.api_keys
+    @api_keys = current_user.api_keys.persisted
     @api_key = current_user.api_keys.new   
   end
 
