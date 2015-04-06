@@ -1,37 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="content content-centered-960">
 
-<h1>Listing API Keys</h1>
+  <h2 class="content-head is-center">Your API Keys</h2>
 
-<table class="pure-table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Key</th>
-      <th>Requests count</th>
-      <th>Last request ip</th>
-      <th>Last reset at</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @api_keys.each do |api_key| %>
+  <table class="pure-table">
+    <thead>
       <tr>
-        <td><%= api_key.name %></td>
-        <td><%= api_key.key %></td>
-        <td><%= api_key.requests_count %></td>
-        <td><%= api_key.last_request_ip %></td>
-        <td><%= api_key.last_reset_at %></td>
-        <td><%= api_key.user.email %></td>
-        <td><%= link_to 'Show', api_key %></td>
-        <td><%= link_to 'Edit', edit_api_key_path(api_key) %></td>
-        <td><%= link_to 'Destroy', api_key, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>App Name</th>
+        <th>Key</th>
+        <th>Daily Requests</th>        
+        <th colspan="1"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>    
+      <% @api_keys.each do |api_key| %>
+        <% unless api_key.new_record? %>
+        <tr>
+          <td><%= api_key.name %></td>
+          <td><%= api_key.key %></td>
+          <td><%= api_key.requests_count %></td>                        
+          <td><%= link_to 'Destroy', api_key, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-<%= link_to 'New API key', new_api_key_path %>
+<div class="content content-centered-768">
+
+  <h2 class="content-head is-center">New API Key</h2>
+
+  <%= render 'form' %>
+
+</div>

@@ -7,4 +7,5 @@
   $('html,body').animate { scrollTop: $(el).offset().top }, speed
   return
 
-hljs.initHighlightingOnLoad()  
+@scrollToBottom = () ->
+  window.scrollTo(0,document.body.scrollHeight)

@@ -1,15 +1,15 @@
 <div class="header">
   <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">    
-    <%= link_to "Bookshark", root_path, class: "pure-menu-heading" %>
-    <ul class="pure-menu-list">
-      <li class="pure-menu-item"><%= link_to "Home", root_path, class: "pure-menu-link pure-menu-active" %></li>
-      <% if user_signed_in? %> 
-      <li class="pure-menu-item"><%= link_to "API Keys", api_keys_path, class: "pure-menu-link" %></li>
-      <li class="pure-menu-item"><%= link_to "Account", edit_user_registration_path, class: "pure-menu-link" %></li>
+    <%= link_to "Bookshark (beta)", root_path, class: "pure-menu-heading" %>
+    <ul class="pure-menu-list">      
+      <%= nav_link "Home", root_path, current_page?(root_url) %>
+      <% if user_signed_in? %>       
+      <%= nav_link "API Keys", api_keys_path, controller?("api_keys") %>      
+      <%= nav_link "Account", edit_user_registration_path, (controller?("devise/registrations") and action?("edit")) %>
       <li class="pure-menu-item"><%= link_to "Log Out", destroy_user_session_path, :method=>'delete', class: "pure-menu-link" %></li>
-      <% else %> 
-      <li class="pure-menu-item"><%= link_to "Log In", new_user_session_path, class: "pure-menu-link" %></li>
-      <li class="pure-menu-item"><%= link_to "Sign Up", new_user_registration_path, class: "pure-menu-link" %></li>
+      <% else %>       
+      <%= nav_link "Log In", new_user_session_path, controller?("devise/sessions") %>      
+      <%= nav_link "Sign Up", new_user_registration_path, (controller?("devise/registrations") and action?("new")) %>
       <% end %> 
     </ul>
   </div>

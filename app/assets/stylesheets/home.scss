@@ -73,9 +73,19 @@ label {
     border: 2px solid #ddd;
     box-shadow: none;
     font-size: 100%;
-    width: 100%;
+    width: 100%;    
     margin-bottom: 1em;
 }
+
+.pure-form input[type=submit] {
+    width: auto; 
+}
+
+.pure-form input[type=checkbox] {
+    width: auto; 
+    margin-top: 1em;
+}
+
 
 /*
  * -- PURE BUTTON STYLES --
@@ -93,6 +103,13 @@ a.pure-button-primary {
     color: #1f8dd6;
     border-radius: 5px;
     font-size: 120%;
+}
+
+.pure-button-error {
+    background: rgb(202, 60, 60);
+    color: white;
+    padding: 0.5em 2em;
+    border-radius: 5px;
 }
 
 
@@ -188,7 +205,14 @@ a.pure-button-primary {
  * -- CONTENT STYLES --
  * This represents the content area (everything below the blue section)
  */
-.content-wrapper {
+.content-wrapper {    
+    width: 100%;
+    min-height: 12%;
+    margin-top: 62px;
+    background: white;
+}
+
+.content-wrapper-under-splash {
     /* These styles are required for the "scroll-over" effect */
     position: absolute;
     top: 87%;
@@ -216,9 +240,28 @@ a.pure-button-primary {
     color: #1f8dd6;
     font-family: 'Roboto Slab', serif;
 }
-    .content-subhead i {
-        margin-right: 7px;
-    }
+
+.content-subhead i {
+    margin-right: 7px;
+}
+
+.content-centered-768 {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 768px;
+}
+
+.content-centered-960 {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 960px;
+}
+
+.content-centered {
+    width:70%; 
+    margin-left:15%; 
+    margin-right:15%;        
+}
 
 /* This is the class used for the dark-background areas. */
 .ribbon {
@@ -246,6 +289,10 @@ a.pure-button-primary {
     .content {
         padding: 1em;        
     }
+
+    .content-wrapper {    
+        margin-top: 50px;        
+    }    
 
     /* We can align the menu header to the left, but float the
     menu items to the right. */

@@ -9,12 +9,16 @@
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
 <%= render 'layouts/menu' %>
 
-<%= yield %>
+<div class="content-wrapper">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= yield %>
+
+</div>
+
 
 
 </body>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-
-  resources :api_keys
+  resources :api_keys, only: [:index, :create, :destroy]
+  
   devise_for :users
   
   namespace :api do
