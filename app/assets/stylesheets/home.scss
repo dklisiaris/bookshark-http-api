@@ -209,7 +209,7 @@ a.pure-button-primary {
     width: 100%;
     min-height: 12%;
     margin-top: 62px;
-    background: white;
+    
 }
 
 .content-wrapper-under-splash {
@@ -337,4 +337,36 @@ a.pure-button-primary {
     .splash-head {
         font-size: 300%;
     }
+}
+
+.alert-box {
+    color:#555;
+    border-radius:10px;
+    font-family: 'Roboto Slab', serif;
+    font-size:14px;
+    padding:10px 10px 10px 36px;
+    margin:10px;
+    margin-top: 80px
+}
+
+.alert-box span {
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.error {
+    background:#ffecec no-repeat 10px 50%;
+    border:1px solid #f5aca6;
+}
+.success {
+    background:#e9ffd9 no-repeat 10px 50%;
+    border:1px solid #a6ca8a;
+}
+.warning {
+    background:#fff8c4 no-repeat 10px 50%;
+    border:1px solid #f2c779;
+}
+.notice {
+    background:#e3f7fc no-repeat 10px 50%;
+    border:1px solid #8ed9f6;
 }

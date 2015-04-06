@@ -23,7 +23,7 @@ class APIKey < ActiveRecord::Base
     if user
       requests_count < user.max_daily_requests ? true : false
     else
-      requests_count < 1000 ? true : false
+      requests_count < 2500 ? true : false
     end
   end
 

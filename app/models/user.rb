@@ -15,9 +15,9 @@ class User < ActiveRecord::Base
   def max_daily_requests
     case level
     when 'registered'
-      return 5000
+      return 15000
     when 'gold'
-      return 25000
+      return 35000
     when 'platinum'
       return 99999999
     end

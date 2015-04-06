@@ -11,9 +11,9 @@
 
 <%= render 'layouts/menu' %>
 
-<div class="content-wrapper">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+<div class="content-wrapper">  
+  <%= alert_box(notice) %>
+  <%= alert_box(alert, 'warning') %>
 
   <%= yield %>
 
