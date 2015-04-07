@@ -67,3 +67,6 @@ gem 'bookshark', "~> 1.0.0.alpha"
 
 # Devise is a flexible authentication solution for Rails based on Warden.
 gem 'devise'
+
+# Use unicorn as default app server
+gem "unicorn-rails"
