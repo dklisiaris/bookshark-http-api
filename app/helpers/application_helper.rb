@@ -20,7 +20,8 @@ module ApplicationHelper
     if msg
       content_tag(:div, class: "alert-box "+contextual_class) do
         content_tag(:span, contextual_class + ': ') +
-        msg
+        msg +
+        link_to(fa_icon("times"), "javascript:void(0)", onclick: "closeAlertBox()", id: "close_alert_box_btn")            
       end
     end
   end

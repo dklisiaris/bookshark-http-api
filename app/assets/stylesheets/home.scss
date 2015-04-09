@@ -344,15 +344,30 @@ a.pure-button-primary {
     border-radius:10px;
     font-family: 'Roboto Slab', serif;
     font-size:14px;
-    padding:10px 10px 10px 36px;
+    padding:10px 36px 10px 36px;
     margin:10px;
-    margin-top: 80px
+    margin-top: 20px;
+    position: fixed;
+    width: 98%
 }
 
-.alert-box span {
-    font-weight:bold;
-    text-transform:uppercase;
+.alert-box {
+    span {
+        font-weight:bold;
+        text-transform:uppercase;
+    }
+
+    a {
+        float:right;
+        color:#555;
+    }  
+
+    a:hover {
+        font-size:16px;
+        color:#6FBEF3;
+    } 
 }
+
 
 .error {
     background:#ffecec no-repeat 10px 50%;

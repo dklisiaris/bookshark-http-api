@@ -70,3 +70,9 @@ gem 'devise'
 
 # Use unicorn as default app server
 gem "unicorn-rails"
+
+# Font awesome icon pack
+gem "font-awesome-rails"
+
+# jQuery plugin for drop-in fix binded events problem caused by Turbolinks
+gem 'jquery-turbolinks'
