@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150402172745) do
+ActiveRecord::Schema.define(version: 20150409163557) do
 
   create_table "api_keys", force: :cascade do |t|
     t.string   "name"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20150402172745) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "level",                  default: 0
+    t.integer  "total_requests",         default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

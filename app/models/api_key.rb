@@ -16,6 +16,7 @@ class APIKey < ActiveRecord::Base
   end
 
   def reset_requests!
+    user.update_attribute(:total_requests, user.total_requests + requests_count)    
     write_attribute(:requests_count, 0)
     write_attribute(:last_reset_at, Time.now)
   end

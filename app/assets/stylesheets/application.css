@@ -12,6 +12,7 @@
  *
  *= require font-awesome
  *= require purecss
+ *= require tipped/tipped
  *= require_tree .
  *= require_self
  */

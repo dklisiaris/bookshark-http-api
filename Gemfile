@@ -76,3 +76,6 @@ gem "font-awesome-rails"
 
 # jQuery plugin for drop-in fix binded events problem caused by Turbolinks
 gem 'jquery-turbolinks'
+
+# Copy to clipboard
+gem 'zeroclipboard-rails'

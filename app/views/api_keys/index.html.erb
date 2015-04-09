@@ -7,12 +7,13 @@
   <h2 class="content-head is-center">Your API Keys</h2>
 
   <% if @api_keys.any? %> 
-    <table class="pure-table">
+    <table class="pure-table pure-table-bordered">
       <thead>
         <tr>
           <th>App Name</th>
-          <th>Key</th>
-          <th>Daily Requests</th>        
+          <th>Key</th>          
+          <th>Daily Requests</th>   
+          <th>Created at</th>     
           <th colspan="1"></th>
         </tr>
       </thead>
@@ -21,9 +22,12 @@
         <% @api_keys.each do |api_key| %>        
           <tr>
             <td><%= api_key.name %></td>
-            <td><%= api_key.key %></td>
-            <td><%= api_key.requests_count %></td>                        
-            <td><%= link_to 'Destroy', api_key, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to(api_key.key, 'javascript:void(0)', 
+            title: 'Click to copy API Key to clipboard', class: 'api-key-tooltip') %></td>
+            <td><%= api_key.requests_count %></td>  
+            <td><%= api_key.created_at.strftime("%d-%m-%Y") %></td>                      
+            <td><%= link_to fa_icon('times'), api_key, method: :delete, 
+            data: { confirm: 'This API key will be deleted. Are you sure?' } %></td>
           </tr>        
         <% end %>
       </tbody>
@@ -41,6 +45,6 @@
 
   <h2 class="content-head is-center">New API Key</h2>
 
-  <%= render 'form' %>
+  <%= render 'form' %>  
 
 </div>
