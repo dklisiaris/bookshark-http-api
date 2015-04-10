@@ -86,3 +86,7 @@ gem 'zeroclipboard-rails'
 
 # Easy way to store env vars in development
 gem 'dotenv-rails', :groups => [:development, :test]
+
+# Use mina for deployments
+gem 'mina'
+gem 'mina-unicorn', :require => false
