@@ -8,6 +8,9 @@ require 'mina/unicorn'
 require 'dotenv'
 Dotenv.load
 
+# Do not use colors, there is some bug with stdin.
+set :term_mode, :system
+
 # Basic settings:
 #   domain       - The hostname to SSH to.
 #   deploy_to    - Path to deploy into.
@@ -24,7 +27,7 @@ set :port, ENV["MINA_PORT"]
 set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 
 # For system-wide RVM install.
-set :rvm_path, '/usr/local/rvm/bin/rvm'
+set :rvm_path, '/home/user/.rvm/scripts/rvm'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
