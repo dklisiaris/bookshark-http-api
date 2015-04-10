@@ -4,7 +4,7 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = 'adcc70762322b61e21c56efcc32dbe4213bd7929b672dbd3dd71da0783a1738469a354be67762454ebde630e64becb4176066def16434a619488f4b3cf5a4a99'
+  config.secret_key = '6161947896b738cb984782452d91e4937e6b33d86caacbf992a475ff8624a3d5e20628f01dbc0949cb70f3b8fcaee2e51cdd456324837055381d4e144bef3484'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -257,6 +257,4 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
-  # ==> Extra configurations
-  config.secret_key = ENV["DEVISE_SECRET_KEY"]
 end
