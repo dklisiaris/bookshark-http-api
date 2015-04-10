@@ -31,7 +31,7 @@ set :rvm_path, '/home/user/.rvm/scripts/rvm'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['log']
+set :shared_paths, ['log', '.env']
 
 # Optional settings:
 #   set :user, 'foobar'    # Username in the server to SSH to.
@@ -47,9 +47,10 @@ task :environment do
 
   # Load environment
   queue %{ echo "-----> Loading environment" #{echo_cmd %[source ~/.bashrc]} }
-
+  
   # For those using RVM, use this to load an RVM version@gemset.
   invoke :'rvm:use[ruby-2.2.1@bookshark-gemset]'
+
 end
 
 # Put any custom mkdir's in here for when `mina setup` is ran.
@@ -57,7 +58,10 @@ end
 # all releases.
 task :setup => :environment do
   queue! %[mkdir -p "#{deploy_to}/shared/log"]
-  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/log"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/.env"]
+
+  queue! %[touch "#{deploy_to}/shared/.env"]
+  queue  %[echo "-----> Be sure to edit 'shared/.env'."]
 end
 
 desc "Deploys the current version to the server."
@@ -65,6 +69,7 @@ task :deploy => :environment do
   to :before_hook do
     # Put things to run locally before ssh
   end
+
   deploy do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.

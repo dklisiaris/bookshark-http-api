@@ -85,7 +85,7 @@ gem 'jquery-turbolinks'
 gem 'zeroclipboard-rails'
 
 # Easy way to store env vars in development
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'dotenv-rails'
 
 # Use mina for deployments
 gem 'mina'
