@@ -4,7 +4,11 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', :groups => [:development, :test]
+# Use postgres as the database for Active Record in production
+group :production do
+  gem 'pg'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -79,3 +83,6 @@ gem 'jquery-turbolinks'
 
 # Copy to clipboard
 gem 'zeroclipboard-rails'
+
+# Easy way to store env vars in development
+gem 'dotenv-rails', :groups => [:development, :test]

@@ -15,3 +15,9 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore precompiled assets
+public/assets/**
+
+# Ignore environment variable files.
+.env
