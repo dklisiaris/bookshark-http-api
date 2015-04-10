@@ -58,10 +58,16 @@ end
 # all releases.
 task :setup => :environment do
   queue! %[mkdir -p "#{deploy_to}/shared/log"]
-  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/.env"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/log"]
+
+  queue! %[mkdir -p "#{deploy_to}/shared/pids"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/pids"] 
+
+  queue! %[mkdir -p "#{deploy_to}/shared/sockets"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/sockets"]   
 
   queue! %[touch "#{deploy_to}/shared/.env"]
-  queue  %[echo "-----> Be sure to edit 'shared/.env'."]
+  queue  %[echo "-----> Be sure to edit #{deploy_to}shared/.env"]
 end
 
 desc "Deploys the current version to the server."
