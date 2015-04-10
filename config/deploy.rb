@@ -5,6 +5,9 @@ require 'mina/git'
 require 'mina/rvm'    # for rvm support. (http://rvm.io)
 require 'mina/unicorn'
 
+require 'dotenv'
+Dotenv.load
+
 # Basic settings:
 #   domain       - The hostname to SSH to.
 #   deploy_to    - Path to deploy into.
