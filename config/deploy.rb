@@ -87,6 +87,7 @@ task :deploy => :environment do
     invoke :'deploy:cleanup'
 
     to :launch do
+      queue "touch #{deploy_to}/tmp/restart.txt"
       invoke :'unicorn:restart'
     end
   end
