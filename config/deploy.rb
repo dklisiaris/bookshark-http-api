@@ -67,7 +67,7 @@ task :setup => :environment do
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/sockets"]   
 
   queue! %[touch "#{deploy_to}/shared/.env"]
-  queue  %[echo "-----> Be sure to edit #{deploy_to}shared/.env"]
+  queue  %[echo "-----> Be sure to edit #{deploy_to}/shared/.env"]
 end
 
 desc "Deploys the current version to the server."
