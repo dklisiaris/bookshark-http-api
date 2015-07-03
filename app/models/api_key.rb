@@ -3,8 +3,11 @@ class APIKey < ActiveRecord::Base
 
   # scope :persisted, -> { where "id IS NOT NULL" }
 
-  def self.generate_token
-    SecureRandom.hex(32)    
+  def self.generate_token    
+    loop do      
+      token = Devise.friendly_token
+      break token unless APIKey.exists?(key: token)
+    end       
   end
 
   def reset_if_needed!
