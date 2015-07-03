@@ -114,23 +114,14 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-<<<<<<< HEAD
     mime-types (2.6.1)
-=======
-    mime-types (2.5)
->>>>>>> 49c76e54c716b5f7695cefb275fcecbda86ec8cf
     mina (0.3.4)
       open4 (~> 1.3.4)
       rake
     mina-unicorn (0.3.0)
     mini_portile (0.6.2)
-<<<<<<< HEAD
     minitest (5.7.0)
     multi_json (1.11.1)
-=======
-    minitest (5.6.1)
-    multi_json (1.11.0)
->>>>>>> 49c76e54c716b5f7695cefb275fcecbda86ec8cf
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     nokogumbo (1.4.1)
@@ -194,11 +185,7 @@ GEM
       crass (~> 1.0.2)
       nokogiri (>= 1.4.4)
       nokogumbo (= 1.4.1)
-<<<<<<< HEAD
     sass (3.4.15)
-=======
-    sass (3.4.13)
->>>>>>> 49c76e54c716b5f7695cefb275fcecbda86ec8cf
     sass-rails (5.0.3)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
@@ -213,13 +200,8 @@ GEM
       multi_json (~> 1.0)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
-<<<<<<< HEAD
     spring (1.3.6)
     sprockets (3.2.0)
-=======
-    spring (1.3.5)
-    sprockets (3.0.3)
->>>>>>> 49c76e54c716b5f7695cefb275fcecbda86ec8cf
       rack (~> 1.0)
     sprockets-rails (2.3.2)
       actionpack (>= 3.0)
