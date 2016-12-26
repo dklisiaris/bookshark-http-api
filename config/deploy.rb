@@ -1,5 +1,5 @@
 # Change these
-server ENV["CAP_DOMAIN"], port: ENV["CAP_PORT"], roles: [:web, :app, :db], primary: true
+server ENV["CAP_DOMAIN"], roles: [:web, :app, :db], primary: true
 
 set :repo_url,        ENV["CAP_REPOSITORY"]
 set :application,     'bookshark-http-api'
