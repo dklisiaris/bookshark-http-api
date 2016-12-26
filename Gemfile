@@ -30,12 +30,6 @@ gem 'sdoc', '~> 0.4.2', group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', '~> 8.0'
@@ -83,9 +77,6 @@ gem 'bookshark', "~> 1.0.0.pre"
 # Devise is a flexible authentication solution for Rails based on Warden.
 gem 'devise', '~> 3.4'
 
-# Use unicorn as default app server
-# gem 'unicorn-rails', '~> 2.2', '>= 2.2.1'
-
 # Use puma as app server
 gem 'puma', '~> 3.6', '>= 3.6.2'
 
@@ -101,6 +92,10 @@ gem 'zeroclipboard-rails', '~> 0.1.2'
 # Easy way to store env vars in development
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
-# Use mina for deployments
-gem 'mina', '~> 1.0', '>= 1.0.6'
-# gem 'mina-unicorn', '~> 1.0', '>= 1.0.1', :require => false
+group :development do
+    gem 'capistrano',         require: false
+    gem 'capistrano-rvm',     require: false
+    gem 'capistrano-rails',   require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma',   require: false
+end
