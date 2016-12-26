@@ -3,10 +3,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-  Tipped.create('.api-key-tooltip')
+  Tipped.create('#clipboard-btn')
 
-  client = new ZeroClipboard($(".api-key-tooltip"))
-  client.on 'copy', (event) ->    
-    clipboard = event.clipboardData
-    clipboard.setData 'text/plain', event.target.innerText
+  clip = new ZeroClipboard($('#clipboard-btn'))
+  $('#clipboard-btn').on 'click', ->
+    $('#clipboard-text').select()
     return
+  return

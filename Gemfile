@@ -84,7 +84,10 @@ gem 'bookshark', "~> 1.0.0.pre"
 gem 'devise', '~> 3.4'
 
 # Use unicorn as default app server
-gem 'unicorn-rails', '~> 2.2', '>= 2.2.1'
+# gem 'unicorn-rails', '~> 2.2', '>= 2.2.1'
+
+# Use puma as app server
+gem 'puma', '~> 3.6', '>= 3.6.2'
 
 # Font awesome icon pack
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
@@ -100,4 +103,4 @@ gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
 # Use mina for deployments
 gem 'mina', '~> 1.0', '>= 1.0.6'
-gem 'mina-unicorn', '~> 1.0', '>= 1.0.1', :require => false
+# gem 'mina-unicorn', '~> 1.0', '>= 1.0.1', :require => false

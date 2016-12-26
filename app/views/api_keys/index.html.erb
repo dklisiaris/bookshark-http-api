@@ -1,4 +1,4 @@
-<% if @api_keys.any? %> 
+<% if @api_keys.any? %>
 <div class="content content-centered-960">
 <% else %>
 <div class="content content-centered-768">
@@ -6,29 +6,35 @@
 
   <h2 class="content-head is-center">Your API Keys</h2>
 
-  <% if @api_keys.any? %> 
+  <% if @api_keys.any? %>
     <table class="pure-table pure-table-bordered">
       <thead>
         <tr>
           <th>App Name</th>
-          <th>Key</th>          
-          <th>Daily Requests</th>   
-          <th>Created</th>     
+          <th>Key</th>
+          <th>Daily Requests</th>
+          <th>Created</th>
           <th colspan="1"></th>
         </tr>
       </thead>
 
-      <tbody>    
-        <% @api_keys.each do |api_key| %>        
+      <tbody>
+        <% @api_keys.each do |api_key| %>
           <tr>
             <td><%= api_key.name %></td>
-            <td><%= link_to(api_key.key, 'javascript:void(0)', 
-            title: 'Click to copy API Key to clipboard', class: 'api-key-tooltip') %></td>
-            <td><%= api_key.requests_count %></td>  
-            <td><%= api_key.created_at.strftime("%d-%m-%Y") %></td>                      
-            <td><%= link_to fa_icon('times'), api_key, method: :delete, 
+            <td>
+              <div class="clipboard-input">
+                <input type="text" id="clipboard-text" value="<%= api_key.key %>" readonly/>
+                <button type="button" id="clipboard-btn" data-clipboard-target="clipboard-text" title="Click to copy">
+                  <i class="fa fa-clipboard"></i>
+                </button>
+              </div>
+            </td>
+            <td><%= api_key.requests_count %></td>
+            <td><%= api_key.created_at.strftime("%d-%m-%Y") %></td>
+            <td><%= link_to fa_icon('times'), api_key, method: :delete,
             data: { confirm: 'This API key will be deleted. Are you sure?' } %></td>
-          </tr>        
+          </tr>
         <% end %>
       </tbody>
     </table>
@@ -45,6 +51,6 @@
 
   <h2 class="content-head is-center">New API Key</h2>
 
-  <%= render 'form' %>  
+  <%= render 'form' %>
 
 </div>
