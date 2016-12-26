@@ -5,7 +5,6 @@ require 'capistrano/deploy'
 require 'capistrano/rails'
 require 'capistrano/bundler'
 require 'capistrano/rvm'
-require 'capistrano/npm'
 require 'capistrano/puma'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.

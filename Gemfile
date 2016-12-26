@@ -95,7 +95,6 @@ gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 group :development do
     gem 'capistrano',         require: false
     gem 'capistrano-rvm',     require: false
-    gem 'capistrano-npm',     require: false
     gem 'capistrano-rails',   require: false
     gem 'capistrano-bundler', require: false
     gem 'capistrano3-puma',   require: false
