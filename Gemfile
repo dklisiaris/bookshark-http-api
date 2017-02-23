@@ -72,7 +72,7 @@ gem 'purecss-rails', '~> 0.6.0'
 gem 'json'
 
 # Book metadata extraction library
-gem 'bookshark', "~> 1.0.0.pre"
+gem 'bookshark', "~> 1.0"
 
 # Devise is a flexible authentication solution for Rails based on Warden.
 gem 'devise', '~> 3.4'

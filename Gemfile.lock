@@ -48,7 +48,7 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bookshark (1.0.0.pre.2)
+    bookshark (1.0.1)
       htmlentities (~> 4.3)
       json (~> 1.8)
       nokogiri (~> 1.6, >= 1.6.6)
@@ -291,7 +291,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors (~> 2.1, >= 2.1.1)
   binding_of_caller (~> 0.7.2)
-  bookshark (~> 1.0.0.pre)
+  bookshark (~> 1.0)
   byebug (~> 8.0)
   capistrano
   capistrano-bundler
@@ -334,4 +334,4 @@ DEPENDENCIES
   zeroclipboard-rails (~> 0.1.2)
 
 BUNDLED WITH
-   1.13.7
+   1.14.3
