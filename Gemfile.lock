@@ -48,7 +48,7 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bookshark (1.0.3)
+    bookshark (1.0.4)
       htmlentities (~> 4.3)
       json (~> 1.8)
       marc (~> 1.0)
