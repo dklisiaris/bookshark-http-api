@@ -25,6 +25,6 @@ production:
   encoding: unicode
   database: bookshark_production
   pool: 25
-  username: <%= ENV["PRODUCTION_DATABASE_USERNAME"] %>
-  password: <%= ENV["PRODUCTION_DATABASE_PASSWORD"] %>
-  host: <%= ENV["PRODUCTION_DATABASE_HOST"] %>
+  username: <%= ENV["BOOKSHARK_API_PRODUCTION_DATABASE_USERNAME"] %>
+  password: <%= ENV["BOOKSHARK_API_PRODUCTION_DATABASE_PASSWORD"] %>
+  host: <%= ENV["BOOKSHARK_API_PRODUCTION_DATABASE_HOST"] %>

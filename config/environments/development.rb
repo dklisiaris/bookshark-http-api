@@ -28,9 +28,9 @@ Rails.application.configure do
     :domain => "bookshark.eu",
     :address   => "smtp.mandrillapp.com",
     :port      => 587,
-    :user_name => ENV["MANDRILL_USERNAME"],
-    :password  => ENV["MANDRILL_API_KEY"]
-  }  
+    :user_name => ENV["BOOKSHARK_API_SENDGRID_USERNAME"],
+    :password  => ENV["BOOKSHARK_API_SENDGRID_PASSWORD"]
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

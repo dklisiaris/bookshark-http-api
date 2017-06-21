@@ -97,7 +97,8 @@ group :development do
     gem 'capistrano-rvm',     require: false
     gem 'capistrano-rails',   require: false
     gem 'capistrano-bundler', require: false
-    gem 'capistrano3-puma',   require: false
+    gem 'capistrano-passenger', '>= 0.1.1'
     gem "capistrano-db-tasks", require: false
-
+    gem 'capistrano-rails-console'
+    gem 'capistrano-faster-assets'
 end
